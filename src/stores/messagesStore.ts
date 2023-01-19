@@ -11,7 +11,8 @@ export const useMessageStore = defineStore("message", () => {
 
   function removeMessage(message: IMessage) {
     const index = messages.value.indexOf(message);
-    changeMessages(messages.value.slice(index, 1));
+    const arr = messages.value.slice(index, 1);
+    messages.value = arr;
   }
 
   function changeMessages(arr: IMessage[]) {

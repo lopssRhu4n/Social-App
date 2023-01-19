@@ -1,15 +1,9 @@
 <script lang="ts" setup>
 import UserMessage from "@/components/Chat/Messages/UserMessage.vue";
 import ContactMessage from "@/components/Chat/Messages/ContactMessage.vue";
-import type { IMessage } from "@/interfaces/IMessage";
 import { useMessageStore } from "@/stores/messagesStore";
 
 const messagesStore = useMessageStore();
-const props = defineProps<{
-  messages: IMessage[];
-}>();
-
-messagesStore.changeMessages(props.messages);
 </script>
 
 <template>

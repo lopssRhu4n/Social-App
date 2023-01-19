@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+import { useActualContactStore } from "@/stores/actualContactStore";
+import { useContactStore } from "@/stores/contactsStore";
+import { useMessageStore } from "@/stores/messagesStore";
+
 const props = defineProps<{
   username: string;
   date?: string;
@@ -6,11 +10,22 @@ const props = defineProps<{
   img?: string;
   id: number;
 }>();
+
+const contacts = useContactStore().contacts;
+const actualContactStore = useActualContactStore();
+const messagesStore = useMessageStore();
+
+const changeContact = () => {
+  const actualContact = contacts[Number(props.id) - 1];
+  actualContactStore.setActualContact(actualContact);
+  messagesStore.changeMessages(actualContactStore.actualContact.messages);
+};
 </script>
 
 <template>
-  <router-link :to="`/chat/${id}`">
+  <router-link :to="`/chat/contact`">
     <div
+      @click="changeContact()"
       class="preview-container w-5/6 mx-auto my-4 h-[100px] transition-all hover:w-11/12 hover:h-[110px] hover:bg-primary cursor-pointer rounded-md bg-secondary flex items-center px-8 justify-between"
     >
       <img

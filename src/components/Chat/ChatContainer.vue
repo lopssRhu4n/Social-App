@@ -2,25 +2,21 @@
 import ChatContainerHeader from "@/components/Chat/Parts/ChatContainerHeader.vue";
 import ChatContainerBody from "@/components/Chat/Parts/ChatContainerBody.vue";
 import ChartContainerFooter from "@/components/Chat/Parts/ChatContainerFooter.vue";
-import { useContactStore } from "@/stores/contactsStore";
-import { ref } from "vue";
+import { useActualContactStore } from "@/stores/actualContactStore";
+import { useMessageStore } from "@/stores/messagesStore";
 
-const props = defineProps<{
-  id: string;
-}>();
-
-const contacts = useContactStore().contacts;
-
-const actualContact = ref(contacts[Number(props.id) - 1]);
+const actualContactStore = useActualContactStore();
+const messagesStore = useMessageStore();
+messagesStore.changeMessages(actualContactStore.actualContact.messages);
 </script>
 
 <template>
   <div class="h-full pt-4 pb-10 w-4/5 flex flex-col justify-between">
     <ChatContainerHeader
-      :img="actualContact.img"
-      :username="actualContact.username"
+      :img="actualContactStore.actualContact.img"
+      :username="actualContactStore.actualContact.username"
     />
-    <ChatContainerBody :messages="actualContact.messages" />
+    <ChatContainerBody />
     <ChartContainerFooter />
   </div>
 </template>

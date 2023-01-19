@@ -10,11 +10,6 @@ const search = ref("");
 const searchContact = () => {
   console.log(contacts);
   contacts.forEach((contact) => {
-    console.log(
-      `${contact.username} inclui ${search.value}: ${contact.username.includes(
-        search.value
-      )}`
-    );
     if (!contact.username.includes(search.value)) {
       contacts.splice(contacts.indexOf(contact), 1);
     }

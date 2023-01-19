@@ -8,7 +8,7 @@ export const routes = [
     component: () => import("@/views/ChatView.vue"),
     children: [
       {
-        path: ":id",
+        path: "contact",
         props: true,
         component: () => import("@/components/Chat/ChatContainer.vue"),
       },
