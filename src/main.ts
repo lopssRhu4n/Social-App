@@ -22,6 +22,7 @@ import {
   faEllipsisVertical,
 } from "@fortawesome/free-solid-svg-icons";
 
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 /* add icons to the library */
 library.add(
   faUser,
@@ -36,7 +37,9 @@ library.add(
   faStar,
   faGear,
   faChartSimple,
-  faMagnifyingGlass
+  faMagnifyingGlass,
+  faLinkedin,
+  faGithub
 );
 import "./assets/main.css";
 

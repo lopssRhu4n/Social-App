@@ -1,9 +1,13 @@
 <script lang="ts" setup>
 import type { IMessage } from "@/interfaces/IMessage";
+import { useActualContactStore } from "@/stores/actualContactStore";
 import { useMessageStore } from "@/stores/messagesStore";
+import { useContactStore } from "@/stores/contactsStore";
 import { ref } from "vue";
 const messageText = ref("");
 const messageStore = useMessageStore();
+const actualContactStore = useActualContactStore();
+const contactStore = useContactStore();
 
 const addMessage = messageStore.addMessage;
 const placeholder = ref("Message...");
@@ -18,6 +22,10 @@ const sendMessage = () => {
     };
 
     addMessage(message);
+    contactStore.changeContactsMessages(
+      messageStore.messages,
+      actualContactStore.actualContact
+    );
   } else {
     placeholder.value = "Mensagens não podem ser vazias!";
     setTimeout(() => {
