@@ -1,13 +1,36 @@
 export const routes = [
   {
-    path: "/chat/:id",
-    name: "chatview",
-    component: () => import("@/views/ChatView.vue"),
-    props: true,
+    path: "/:catchAll(.*)",
+    redirect: "404",
   },
   {
-    path: "/",
+    path: "/chat",
+    component: () => import("@/views/ChatView.vue"),
+    children: [
+      {
+        path: ":id",
+        props: true,
+        component: () => import("@/components/Chat/ChatContainer.vue"),
+      },
+      {
+        path: "",
+        component: () => import("@/components/Chat/DefaultChat.vue"),
+      },
+    ],
+  },
+  {
+    path: "",
     name: "home",
     component: () => import("@/views/HomeView.vue"),
+  },
+  {
+    path: "/404",
+    name: "404",
+    component: () => import("@/views/404View.vue"),
+  },
+  {
+    path: "/dev",
+    name: "dev",
+    component: () => import("@/views/DevView.vue"),
   },
 ];

@@ -9,10 +9,9 @@ export const useMessageStore = defineStore("message", () => {
     messages.value.push(message);
   }
 
-  function removeMessage(id: number) {
-    const findIndex = messages.value.map((e) => e.id);
-    const index = findIndex.indexOf(id);
-    messages.value = messages.value.splice(index, 1);
+  function removeMessage(message: IMessage) {
+    const index = messages.value.indexOf(message);
+    changeMessages(messages.value.slice(index, 1));
   }
 
   function changeMessages(arr: IMessage[]) {

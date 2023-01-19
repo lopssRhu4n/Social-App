@@ -8,7 +8,7 @@ const props = defineProps<{
   <header
     class="w-full h-1/6 bg-secondary shadow-lg px-8 rounded-md justify-between flex items-center"
   >
-    <div class="flex items-center w-3/12 justify-between">
+    <div class="flex items-center gap-4 w-4/12 flex-nowrap">
       <img :src="img" v-if="img" class="w-12 h-12 rounded-full" alt="" />
       <font-awesome-icon
         v-else

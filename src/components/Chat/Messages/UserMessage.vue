@@ -1,14 +1,12 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import { useMessageStore } from "@/stores/messagesStore";
+import type { IMessage } from "@/interfaces/IMessage";
 
 const removeMessage = useMessageStore().removeMessage;
 
 const props = defineProps<{
-  text: string;
-  visualized?: string;
-  send?: string;
-  id: number;
+  item: IMessage;
 }>();
 
 const showOption = ref(false);
@@ -19,7 +17,7 @@ const showOption = ref(false);
     <p
       class="self-end max-w-xl text-sm p-6 justify-end text-justify rounded-lg rounded-br-none bg-primary text-gray-200"
     >
-      {{ props.text }}
+      {{ props.item.text }}
     </p>
 
     <button
@@ -38,7 +36,7 @@ const showOption = ref(false);
     >
       <button
         class="h-10 hover:bg-gray-400 cursor-pointer w-full uppercase hover:text-white transition-all rounded-md"
-        @click="removeMessage(props.id)"
+        @click="removeMessage(props.item)"
       >
         Apagar
       </button>
@@ -46,14 +44,14 @@ const showOption = ref(false);
 
     <small
       class="absolute top-full right-10 text-primary"
-      v-if="props.visualized"
+      v-if="props.item.visualized"
     >
       <font-awesome-icon icon="fa-solid fa-check-double" />
     </small>
 
     <small
       class="absolute top-full right-10 text-gray-500"
-      v-else-if="props.send"
+      v-else-if="props.item.send"
     >
       <font-awesome-icon icon="fa-solid fa-check-double" />
     </small>
@@ -62,12 +60,12 @@ const showOption = ref(false);
       <font-awesome-icon icon="fa-solid fa-check" />
     </small>
 
-    <small class="top-full absolute text-white" v-if="props.visualized">
-      {{ props.visualized }}
+    <small class="top-full absolute text-white" v-if="props.item.visualized">
+      {{ props.item.visualized }}
     </small>
 
-    <small class="top-full absolute text-white" v-else-if="props.send">
-      {{ props.send }}
+    <small class="top-full absolute text-white" v-else-if="props.item.send">
+      {{ props.item.send }}
     </small>
   </div>
 </template>
