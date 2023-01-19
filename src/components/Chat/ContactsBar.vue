@@ -59,8 +59,4 @@ const lastMessage = (arr: IMessage[]) => {
     </div>
   </aside>
 </template>
-<style scoped>
-.aside::-webkit-scrollbar {
-  display: none;
-}
-</style>
+<style scoped></style>
