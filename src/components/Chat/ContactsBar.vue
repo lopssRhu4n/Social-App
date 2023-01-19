@@ -8,10 +8,18 @@ const contacts = useContactStore().contacts;
 const search = ref("");
 
 const searchContact = () => {
-  console.log(contacts);
-  contacts.forEach((contact) => {
-    if (!contact.username.includes(search.value)) {
-      contacts.splice(contacts.indexOf(contact), 1);
+  const previews = document.querySelectorAll(".preview-container-title");
+  console.log(previews);
+
+  previews.forEach((preview) => {
+    if (!search.value) {
+      preview.parentElement?.parentElement?.classList.remove("invisible");
+    }
+
+    if (!preview.innerHTML.toLowerCase().includes(search.value.toLowerCase())) {
+      preview.parentElement?.parentElement?.classList.add("invisible");
+    } else {
+      preview.parentElement?.parentElement?.classList.remove("invisible");
     }
   });
 };

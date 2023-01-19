@@ -40,7 +40,9 @@ const changeContact = () => {
         class="text-2xl transition-all p-4 rounded-full bg-bg text-gray-200"
       />
       <div class="w-3/5 h-full relative">
-        <h2 class="text-gray-400 absolute text-sm top-3">
+        <h2
+          class="preview-container-title text-gray-400 absolute text-sm top-3"
+        >
           {{ props.username }}
         </h2>
         <small class="absolute text-gray-400 text-[10px] top-4 -right-3">{{

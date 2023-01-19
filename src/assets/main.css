@@ -25,3 +25,7 @@ body{
     background-color: gray;
   }
 
+
+.invisible {
+  display: none;
+}
