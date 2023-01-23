@@ -34,18 +34,18 @@ const lastMessage = (arr: IMessage[]) => {
   <aside
     class="row-span-6 col-span-3 bg-bg-secondary rounded-r-2xl items-center py-4 flex flex-col"
   >
-    <div class="relative">
+    <div class="relative flex justify-center">
       <input
         @keyup="searchContact"
         type="text"
         v-model="search"
         placeholder="Search"
-        class="w-80 outline-none h-16 mb-2 bg-bg rounded-md p-2 text-gray-400"
+        class="w-4/5 mx-auto outline-none h-16 mb-2 bg-bg rounded-md p-2 text-gray-400"
       />
 
       <font-awesome-icon
         icon="fa-solid fa-magnifying-glass"
-        class="absolute top-6 right-4 text-gray-400"
+        class="absolute top-6 right-[15%] text-gray-400"
       />
     </div>
 
