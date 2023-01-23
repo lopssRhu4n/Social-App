@@ -5,7 +5,7 @@ import ContactsBar from "@/components/Chat/ContactsBar.vue";
 <template>
   <div class="row-span-6 col-span-11 grid grid-cols-11 grid-rows-6">
     <ContactsBar />
-    <main class="row-span-6 col-span-8 justify-center flex">
+    <main class="col-span-9 row-span-6 lg:col-span-8 justify-center flex">
       <RouterView v-slot="{ Component }">
         <transition
           enter-active-class="animate__animated animate__backInUp animate__fast"

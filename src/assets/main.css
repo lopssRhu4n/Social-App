@@ -13,9 +13,14 @@ body{
     overflow: hidden;
 }
 
-::-webkit-scrollbar {
+::-webkit-scrollbar{
+  display: none;
+}
+
+@media (min-width: 680px)  {
+  ::-webkit-scrollbar {
     height: 10px;
-  
+    display: block;
     width: 10px;
   }
   
@@ -25,7 +30,10 @@ body{
     background-color: gray;
   }
 
+  
+}
 
-.invisible {
+
+.invisible-d {
   display: none;
 }
