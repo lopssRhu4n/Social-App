@@ -20,15 +20,15 @@ const props = defineProps<{
 
     <div class="flex items-center w-2/6 justify-between">
       <font-awesome-icon
-        class="text-xl my-1 text-gray-400 transition-all rounded-full p-5 cursor-pointer hover:bg-gray-400 hover:text-white"
+        class="text-xl my-1 text-gray-400 transition-all rounded-full p-[10%] cursor-pointer hover:bg-gray-400 hover:text-white"
         icon="fa-solid fa-layer-group"
       />
       <font-awesome-icon
-        class="text-xl my-1 text-gray-400 transition-all rounded-full p-5 cursor-pointer hover:bg-gray-400 hover:text-white"
+        class="text-xl my-1 text-gray-400 transition-all rounded-full p-[10%] cursor-pointer hover:bg-gray-400 hover:text-white"
         icon="fa-solid fa-magnifying-glass"
       />
       <font-awesome-icon
-        class="text-xl my-1 text-gray-400 transition-all rounded-full p-5 cursor-pointer hover:bg-gray-400 hover:text-white"
+        class="text-xl my-1 text-gray-400 transition-all rounded-full p-[10%] cursor-pointer hover:bg-gray-400 hover:text-white"
         icon="fa-solid fa-bars"
       />
     </div>
