@@ -26,27 +26,27 @@ const changeContact = () => {
   <router-link :to="`/chat/contact`">
     <div
       @click="changeContact()"
-      class="preview-container w-5/6 h-[70px] flex-col py-2 hover:h-75px mx-auto my-4 md:h-[100px] transition-all hover:w-11/12 md:hover:h-[110px] md:flex-row hover:bg-primary cursor-pointer rounded-md bg-secondary flex items-center md:px-8 justify-between"
+      class="preview-container h-[40px] w-[43px] justify-center sm:w-5/6 sm:h-[70px] flex-col py-2 hover:h-75px mx-auto my-4 lg:h-[100px] transition-all hover:w-11/12 lg:hover:h-[110px] lg:flex-row hover:bg-primary cursor-pointer rounded-lg bg-secondary flex items-center lg:px-8 sm:justify-between"
     >
       <img
         :src="props.img"
-        class="w-8 h-8 md:w-12 md:h-12 rounded-full"
+        class="w-8 h-8 lg:w-12 lg:h-12 rounded-full"
         v-if="props.img"
         alt=""
       />
       <font-awesome-icon
         v-else
         icon="fa-solid fa-user"
-        class="text-lg p-2 md:text-2xl transition-all md:p-4 rounded-full bg-bg text-gray-200"
+        class="text-lg p-2 lg:text-2xl transition-all lg:p-4 rounded-full bg-bg text-gray-200"
       />
-      <div class="md:w-3/5 md:h-full relative">
+      <div class="hidden sm:block lg:w-3/5 lg:h-full relative">
         <h2
-          class="text-center top-2/4 text-[10px] md:-translate-y-[50%] ml-1 preview-container-title text-gray-400 md:absolute lg:translate-y-0 md:text-sm lg:top-3 lg:ml-0"
+          class="md:block text-center top-2/4 text-[10px] md-translate-y-[50%] ml-1 preview-container-title text-gray-400 lg:absolute lg:translate-y-0 lg:top-3 lg:ml-0"
         >
           {{ props.username }}
         </h2>
         <small
-          class="invisible absolute lg:visible text-gray-400 text-[10px] top-4 -right-3"
+          class="invisible absolute lg:visible text-gray-400 text-[8px] top-[14px] -right-3"
           >{{ props.date }}</small
         >
         <p
