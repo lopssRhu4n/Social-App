@@ -1,6 +1,10 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-undef */
-/** @type {import('tailwindcss').Config} */
+/** 
+ * 
+
+
+@type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.html", "./src/**/*.{vue,ts,js}"],
   theme: {

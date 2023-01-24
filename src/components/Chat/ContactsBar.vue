@@ -33,21 +33,21 @@ const lastMessage = (arr: IMessage[]) => {
     class="col-span-2 row-span-6 lg:col-span-3 bg-bg-secondary rounded-r-2xl items-center py-4 flex flex-col"
   >
     <div class="relative flex flex-col justify-center">
-      <button class="md:hidden">
+      <!-- <button class="lg:hidden">
         <font-awesome-icon icon="fa-solid fa-bars" />
-      </button>
+      </button> -->
 
       <input
         @keyup="searchContact"
         type="text"
         v-model="search"
         placeholder="Search"
-        class="hidden w-4/5 mx-auto outline-none h-16 mb-2 md:block bg-bg rounded-md p-2 text-gray-400"
+        class="hidden w-4/5 mx-auto outline-none h-16 mb-2 lg:block bg-bg rounded-md p-2 text-gray-400"
       />
 
       <font-awesome-icon
         icon="fa-solid fa-magnifying-glass"
-        class="hidden md:block absolute top-6 right-[15%] text-gray-400"
+        class="hidden lg:block absolute top-6 right-[15%] text-gray-400"
       />
     </div>
 

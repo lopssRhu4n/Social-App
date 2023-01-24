@@ -11,7 +11,7 @@ messagesStore.changeMessages(actualContactStore.actualContact.messages);
 </script>
 
 <template>
-  <div class="h-full pt-4 pb-10 w-4/5 flex flex-col justify-between">
+  <div class="h-full pt-10 md:pt-4 pb-10 w-4/5 flex flex-col justify-between">
     <ChatContainerHeader
       :img="actualContactStore.actualContact.img"
       :username="actualContactStore.actualContact.username"
